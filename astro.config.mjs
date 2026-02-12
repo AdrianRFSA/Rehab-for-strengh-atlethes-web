@@ -13,12 +13,9 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
         define: {
-            // Esto es necesario para que las variables de entorno estén disponibles en Vercel
-            "process.env.UPSTASH_REDIS_REST_URL": JSON.stringify(process.env.UPSTASH_REDIS_REST_URL),
-            "process.env.UPSTASH_REDIS_REST_TOKEN": JSON.stringify(process.env.UPSTASH_REDIS_REST_TOKEN),
         },
         server: {
-            allowedHosts: "3prfi1-ip-188-26-212-89.tunnelmole.net"
+
         }
     },
     srcDir: './src',
