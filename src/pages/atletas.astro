@@ -1,0 +1,46 @@
+---
+import { testimonials } from "@/lib/testimonials";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { CustomCard } from "@/components/testimonials/react/CustomCard";
+import Hero from "@/components/hero/Hero.astro";
+import ContactCTA from "@/components/cta/ContactCTA.astro";
+---
+
+<BaseLayout
+  title="Atletas | Rehab for strengh atlethes"
+  description="Documentando el proceso de nuestros atletas en rehab for strengh atlhetes"
+>
+  <div class="stack gap-20 lg:gap-48 bg-color-dark bg-color-ligth">
+    <main class="wrapper stack mt-20 justify-center items-center gap-8">
+      <Hero
+        title="Atletas | Confianza y Resultados"
+        tagline="Estos atletas confiaron en rehab for strengh atlethes y sus resultados hablan por si solos"
+        align="start"
+      />
+      <section class="w-full max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+          {
+            testimonials.map((testimonial) => (
+              <div class="w-full max-w-md">
+                <li
+                  class="p-4 list-none"
+                  transition:name={`card-${testimonial.name}`}
+                >
+                  <CustomCard
+                    client:load
+                    url={testimonial.url}
+                    title={testimonial.name}
+                    subtitle={testimonial.sport}
+                    description={testimonial.testimonial}
+                    image={testimonial.image}
+                  />
+                </li>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+    <ContactCTA />
+  </div>
+</BaseLayout>

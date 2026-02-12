@@ -1,0 +1,45 @@
+---
+import RFSADesktopBg from "public/assets/backgrounds/RFSADesktopBg.webp"
+import  RFSAMobileBg from "public/assets/backgrounds/RFSAMobileBg.webp"
+import  RFSALogo from "public/assets/backgrounds/AdriLogoWhite.png"
+---
+
+  <header class="header header-container first-header wrapper stack gap-8 lg:gap-20">
+      <picture id="hero-background" class="scale-100 relative hidden lg:block h-screen overflow-hidden">
+        <img
+          src={RFSADesktopBg.src}
+          alt=""
+          id="hero-desktop"
+          class=" w-full h-full object-cover"
+        />
+        <img
+          src={RFSALogo.src}
+          alt="Logo"
+          id="hero-logo-desktop"
+          class=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto max-w-[70%] max-h-[70%] object-contain"
+        />
+      </picture>
+    <picture id="hero-background" class="h-full w-full scale-100 overflow-hidden block lg:hidden">
+      <img
+        src={RFSAMobileBg.src}
+        alt=""
+        id="hero-mobile"
+        class="w-full h-full object-cover"
+      />
+    </picture>
+  </header>
+
+
+
+<style>
+  .header-container {
+    overflow: hidden
+    position: relative
+  }
+  
+  .first-header {
+    max-width: 100%
+    width: 100%
+    height: auto
+  }
+</style>

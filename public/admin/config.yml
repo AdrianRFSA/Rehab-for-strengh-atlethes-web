@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: EleanQuintero/RFSA-WEB
+  branch: main
+  base_url: https://rfsa-web.vercel.app
+  auth_endpoint: /api/auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "posts"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - {
+          label: "Descripción",
+          name: "description",
+          widget: "string",
+          required: true,
+        }
+      - {
+          label: "Fecha de publicación",
+          name: "publishDate",
+          widget: "datetime",
+          required: true,
+        }
+      - { label: "Etiquetas", name: "tags", widget: "list", required: true }
+      - {
+          label: "Imagen destacada",
+          name: "img_cover",
+          widget: "image",
+          required: true,
+        }
+      - {
+          label: "Texto alternativo de imagen",
+          name: "img_alt",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Cuerpo", name: "body", widget: "markdown", required: true }

@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import ReactFilters from "@/components/react/ReactFilters";
+import Hero from "@/components/hero/Hero.astro";
+import ContactCTA from "@/components/cta/ContactCTA.astro";
+
+const projects = (await getCollection("posts")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+const categories = [
+  ...new Set(projects.map((project) => project.data.tags[0])),
+];
+---
+
+<BaseLayout
+  title="Blog | Rehab for strengh atlethes"
+  description="Aquí encontraras mis ultimas publicaciones, ademas de información de alto valor para atletas de fuerza"
+>
+  <div class="stack gap-20 lg:gap-48 bg-color-dark bg-color-ligth">
+    <main class="wrapper stack mt-20 justify-center items-center gap-8 p-3">
+      <Hero
+        title="Blog | Mis ultimas publicaciones"
+        tagline="Aquí encontraras mis ultimas publicaciones"
+        align="start"
+      />
+      <ReactFilters posts={projects} categories={categories} client:load />
+    </main>
+    <ContactCTA />
+  </div>
+</BaseLayout>

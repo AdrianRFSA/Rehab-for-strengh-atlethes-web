@@ -1,0 +1,38 @@
+---
+// Learn about using Astro layouts:
+// https://docs.astro.build/en/core-concepts/layouts/
+
+// Component Imports
+
+import { ClientRouter } from "astro:transitions";
+import { ThemeProvider } from "@/components/theme/react/ThemeProvider";
+import Footer from "@/components/footer/Footer.astro";
+import MainHead from "@/components/header/MainHead.astro";
+import NavBar from "@/components/header/navbar/astro/NavBar.astro";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <MainHead
+      title={title ?? "Rehab for Strengh Atlethes"}
+      description={description ?? ""}
+    />
+    <ClientRouter />
+  </head>
+  <body class="bg-color-dark bg-color-ligth h-full">
+    <ThemeProvider client:load>
+      <div class="stack">
+        <NavBar />
+        <slot />
+        <Footer />
+      </div>
+    </ThemeProvider>
+  </body>
+</html>
