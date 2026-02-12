@@ -2,7 +2,7 @@ backend:
   name: github
   repo: AdrianRFSA/Rehab-for-strengh-atlethes-web
   branch: main
-  base_url: https://rehab-for-strengh-atlethes-web.vercel.app/
+  base_url: https://rehab-for-strengh-atlethes-web.vercel.app
   auth_endpoint: /api/auth
 
 media_folder: "public/uploads"
