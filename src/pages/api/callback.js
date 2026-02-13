@@ -29,10 +29,11 @@ export const GET = async ({ url, request }) => {
       },
     });
 
-    const host = url.origin;
+    // Usar la URL de producción (debe coincidir con GitHub OAuth App)
+    const redirectUri = 'https://rehab-for-strengh-atlethes-web.vercel.app/api/callback';
     const tokenParams = {
       code: code,
-      redirect_uri: `${host}/api/callback`,
+      redirect_uri: redirectUri,
     };
 
     console.log('Solicitando token con parámetros:', JSON.stringify(tokenParams));

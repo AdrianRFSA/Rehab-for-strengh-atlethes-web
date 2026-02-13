@@ -7,9 +7,8 @@ export const GET = async ({ redirect, url }) => {
       return new Response('Error: Configuración de OAuth incompleta', { status: 500 });
     }
 
-    // Obtener el host actual para construir el redirect_uri
-    const host = url.origin;
-    const redirectUri = `${host}/api/callback`;
+    // Usar la URL de producción (debe coincidir con GitHub OAuth App)
+    const redirectUri = 'https://rehab-for-strengh-atlethes-web.vercel.app/api/callback';
 
     const authBase = 'https://github.com/login/oauth/authorize';
 
