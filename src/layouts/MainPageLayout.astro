@@ -6,6 +6,7 @@
 
 import { ClientRouter } from "astro:transitions";
 import { ThemeProvider } from "@/components/theme/react/ThemeProvider";
+import Analytics from "@vercel/analytics/astro";
 import Footer from "@/components/footer/Footer.astro";
 import MainHead from "@/components/header/MainHead.astro";
 import NavBar from "@/components/header/navbar/astro/NavBar.astro";
@@ -24,6 +25,7 @@ const { title, description } = Astro.props;
       title={title ?? "Rehab for Strengh Atlethes"}
       description={description ?? ""}
     />
+    <Analytics />
     <ClientRouter />
   </head>
   <body class="bg-color-dark bg-color-ligth">
