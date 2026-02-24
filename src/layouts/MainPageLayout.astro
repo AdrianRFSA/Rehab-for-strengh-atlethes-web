@@ -10,20 +10,35 @@ import Analytics from "@vercel/analytics/astro";
 import Footer from "@/components/footer/Footer.astro";
 import MainHead from "@/components/header/MainHead.astro";
 import NavBar from "@/components/header/navbar/astro/NavBar.astro";
+import SchemaOrg from "@/components/seo/SchemaOrg.astro";
 
 interface Props {
   title?: string | undefined;
   description?: string | undefined;
+  image?: string | undefined;
+  type?: 'website' | 'article';
+  publishDate?: Date | undefined;
+  schemaType?: 'website' | 'article' | 'person' | 'business';
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, type, publishDate, schemaType = 'website' } = Astro.props;
 ---
 
 <html lang="es">
   <head>
     <MainHead
-      title={title ?? "Rehab for Strengh Atlethes"}
-      description={description ?? ""}
+      title={title ?? "Rehab for Strength Athletes — Fisioterapia para deportistas de fuerza"}
+      description={description ?? "Fisioterapia especializada en deportes de fuerza. Rehabilitación, prevención de lesiones y mejora del rendimiento para atletas de powerlifting y fuerza."}
+      image={image}
+      type={type}
+      publishDate={publishDate}
+    />
+    <SchemaOrg
+      type={schemaType}
+      title={title}
+      description={description}
+      image={image}
+      publishDate={publishDate}
     />
     <Analytics />
     <ClientRouter />

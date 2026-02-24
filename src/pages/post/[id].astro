@@ -19,12 +19,12 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { data } = post;
-const { title, description, tags } = data;
+const { title, description, tags, publishDate } = data;
 
 const { Content } = await render(post);
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} type="article" publishDate={publishDate} schemaType="article">
   <section
     class="stack gap-20 bg-color-dark bg-color-ligth px-4 sm:px-6 lg:px-8"
   >

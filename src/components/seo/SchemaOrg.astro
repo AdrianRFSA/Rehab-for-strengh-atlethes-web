@@ -1,0 +1,114 @@
+---
+interface Props {
+  type?: 'website' | 'article' | 'person' | 'business';
+  title?: string;
+  description?: string;
+  image?: string;
+  publishDate?: Date;
+}
+
+const {
+  type = 'website',
+  title = "Rehab for Strength Athletes — Fisioterapia para deportistas de fuerza",
+  description = "Fisioterapia especializada en deportes de fuerza. Rehabilitación, prevención de lesiones y mejora del rendimiento para atletas de powerlifting y fuerza.",
+  image = "/assets/AdriLogo.webp",
+  publishDate,
+} = Astro.props;
+
+const siteURL = Astro.site?.href ?? "https://www.rehabforstrengthathletes.com/";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const socialImageURL = new URL(image, Astro.site).href;
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Rehab for Strength Athletes",
+  url: siteURL,
+  description,
+  inLanguage: "es",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteURL}posts/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: "Rehab for Strength Athletes",
+  url: siteURL,
+  logo: new URL("/assets/AdriLogo.webp", Astro.site).href,
+  description,
+  founder: {
+    "@type": "Person",
+    name: "Adrián Manzanares",
+    jobTitle: "Fisioterapeuta",
+  },
+  sameAs: ["https://www.instagram.com/adriraw"],
+};
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Adrián Manzanares",
+  jobTitle: "Fisioterapeuta especializado en deportes de fuerza",
+  url: siteURL,
+  image: socialImageURL,
+  description,
+  sameAs: ["https://www.instagram.com/adriraw"],
+  worksFor: {
+    "@type": "HealthAndBeautyBusiness",
+    name: "Rehab for Strength Athletes",
+    url: siteURL,
+  },
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  image: socialImageURL,
+  url: canonicalURL,
+  datePublished: publishDate?.toISOString(),
+  author: {
+    "@type": "Person",
+    name: "Adrián Manzanares",
+    url: siteURL,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Rehab for Strength Athletes",
+    url: siteURL,
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/assets/AdriLogo.webp", Astro.site).href,
+    },
+  },
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": canonicalURL,
+  },
+};
+
+let schema: object;
+switch (type) {
+  case 'article':
+    schema = articleSchema;
+    break;
+  case 'person':
+    schema = personSchema;
+    break;
+  case 'business':
+    schema = organizationSchema;
+    break;
+  default:
+    schema = websiteSchema;
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

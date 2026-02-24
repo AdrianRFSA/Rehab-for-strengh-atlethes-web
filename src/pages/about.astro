@@ -1,12 +1,14 @@
 ---
+export const prerender = true;
 import ContactCTA from "@/components/cta/ContactCTA.astro";
 import Hero from "@/components/hero/Hero.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
-  title="Sobre mi | Rehab for strengh atlethes"
-  description=" Conoce mi historia y como nace rehab for strengh atlethes"
+  title="Sobre Adrián Manzanares | Fisioterapeuta especializado en fuerza"
+  description="Conoce la historia de Adrián Manzanares, fisioterapeuta especializado en deportes de fuerza y atleta de powerlifting. Cómo nace Rehab for Strength Athletes."
+  schemaType="person"
 >
   <div class="stack gap-20 lg:gap-48 bg-color-dark bg-color-ligth">
     <main class="wrapper stack gap-20 p-10 lg:gap-30 about">
@@ -19,12 +21,12 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
           <img
             class="w-[480px] h-[480px] aspect-square object-cover transition-transform duration-300 ease-in-out hover:scale-110"
             src="/assets/Adrian_Manzanares.jpg"
-            alt=""
+            alt="Adrián Manzanares, fisioterapeuta"
           />
           <img
             class="w-[580px] h-[480px] aspect-square object-cover transition-transform duration-300 ease-in-out hover:scale-110"
             src="/assets/AdriLogo.webp"
-            alt=""
+            alt="Logo de Rehab for Strength Athletes"
           />
         </div>
       </Hero>
