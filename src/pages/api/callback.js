@@ -54,7 +54,8 @@ export const GET = async ({ url, request }) => {
                 console.log("receiveMessage", e);
                 // Validar origen
                 if (!e.origin.match(/^https?:\\/\\/localhost:[0-9]+$/) && 
-                    !e.origin.match(/^https:\\/\\/[a-zA-Z0-9-]+\\.vercel\\.app$/)) {
+                    !e.origin.match(/^https:\\/\\/[a-zA-Z0-9-]+\\.vercel\\.app$/) &&
+                    e.origin !== 'https://www.rehabforstrengthathletes.com') {
                   console.log('Origen inválido:', e.origin);
                   return;
                 }
