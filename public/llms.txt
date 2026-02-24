@@ -1,0 +1,26 @@
+# Rehab for Strength Athletes
+
+> Fisioterapia especializada en deportes de fuerza. Adrián Manzanares es fisioterapeuta y atleta de powerlifting que ayuda a deportistas de fuerza a rehabilitarse, prevenir lesiones y mejorar su rendimiento sin abandonar el entrenamiento.
+
+Este sitio web es el espacio profesional de Adrián Manzanares, fisioterapeuta colegiado especializado en deportes de fuerza y powerlifting. Combina su formación clínica con su experiencia como atleta competidor para ofrecer un enfoque de rehabilitación orientado al rendimiento: el objetivo no es solo recuperarse, sino volver más fuerte. Los contenidos del blog abordan temas de entrenamiento basado en evidencia, ciencia del dolor, metodología del powerlifting y salud del deportista de fuerza.
+
+## Páginas principales
+
+- [Inicio](https://www.rehabforstrengthathletes.com/): Presentación del servicio de fisioterapia deportiva especializada en fuerza, incluyendo servicios, habilidades y testimonios de atletas.
+- [Sobre Adrián](https://www.rehabforstrengthathletes.com/about): Historia de Adrián Manzanares, su formación como fisioterapeuta y su trayectoria como atleta de powerlifting, y cómo nace Rehab for Strength Athletes.
+- [Blog](https://www.rehabforstrengthathletes.com/posts): Artículos sobre entrenamiento de fuerza, rehabilitación, ciencia del dolor y powerlifting basados en evidencia científica.
+- [Atletas](https://www.rehabforstrengthathletes.com/atletas): Testimonios y resultados reales de atletas que han pasado por el proceso de rehabilitación.
+- [Tienda](https://www.rehabforstrengthathletes.com/shop): Productos formativos y de asesoramiento para maximizar el rendimiento y prevenir lesiones en deportes de fuerza.
+
+## Blog
+
+- [Blog - Todos los artículos](https://www.rehabforstrengthathletes.com/posts): Listado completo de artículos sobre entrenamiento, fisioterapia y powerlifting.
+- [Tu resonancia NO siempre explica tu dolor](https://www.rehabforstrengthathletes.com/post/Tu-resonancia-NO-siempre-explica-tu-dolor): Revisión de 33 estudios con 3.110 resonancias de personas asintomáticas que demuestra que los hallazgos de imagen no siempre correlacionan con el dolor.
+- [Todos los "métodos" de entrenamiento convergen en los mismos principios](https://www.rehabforstrengthathletes.com/post/Metodolog%C3%ADas-convergen-en-mismos-principios): Análisis empírico de cómo entrenan los powerlifters realmente, más allá de modas metodológicas, y los principios comunes que subyacen a todos los enfoques.
+
+## Optional
+
+- [Aviso legal](https://www.rehabforstrengthathletes.com/legal/aviso-legal): Información legal del sitio web.
+- [Política de privacidad](https://www.rehabforstrengthathletes.com/legal/politica-privacidad): Política de tratamiento de datos personales.
+- [Política de cookies](https://www.rehabforstrengthathletes.com/legal/politica-cookies): Información sobre el uso de cookies en el sitio.
+- [Condiciones de venta](https://www.rehabforstrengthathletes.com/legal/condiciones-venta): Términos y condiciones aplicables a la compra de productos.
