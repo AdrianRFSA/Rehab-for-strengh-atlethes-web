@@ -30,7 +30,7 @@ export const GET = async ({ url, request }) => {
     });
 
     // Usar la URL de producción (debe coincidir con GitHub OAuth App)
-    const redirectUri = 'https://rehab-for-strengh-atlethes-web.vercel.app/api/callback';
+    const redirectUri = 'https://www.rehabforstrengthathletes.com/api/callback';
     const tokenParams = {
       code: code,
       redirect_uri: redirectUri,
